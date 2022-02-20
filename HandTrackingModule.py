@@ -109,7 +109,7 @@ if __name__ == '__main__':
         frame = cv2.flip(frame,1)     # comment or delete this if you are not use it as selfie mode
         data = detector.getAllPosition(frame)
         result = detector.detectGesture(data)
-        print(result)        # the output will be within the outputlist shown in the last line of this script
+        cv2.putText(frame,result,(10,50),cv2.FONT_HERSHEY_PLAIN,4,(255,0,255),2)        # the output will be within the outputlist shown in the last line of this script
         cv2.imshow("Camera", frame) 
         if cv2.waitKey(1) == 27:     # press escape key to stop the program
             break
